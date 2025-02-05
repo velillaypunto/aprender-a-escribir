@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  color: #333;
+}
+
+#instrucciones {
+  margin-bottom: 20px;
+}
+
+#letra-o-numero {
+  font-size: 100px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+canvas {
+  border: 2px solid #333;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#mensaje {
+  font-size: 20px;
+  color: green;
+  margin-top: 20px;
+}
