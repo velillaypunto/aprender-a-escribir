@@ -5,9 +5,16 @@ const limpiarBtn = document.getElementById('limpiar');
 const siguienteBtn = document.getElementById('siguiente');
 const letraONumero = document.getElementById('letra-o-numero');
 const mensaje = document.getElementById('mensaje');
+const nombreSelect = document.getElementById('nombre');
+const mensajeNombre = document.getElementById('mensaje-nombre');
+const imagenTrazos = document.getElementById('imagen-trazos');
 
 // Lista de letras y números
-const elementos = ['A', 'B', 'C', '1', '2', '3']; // Puedes agregar más
+const elementos = [
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+];
 
 let indice = 0;
 
@@ -44,16 +51,18 @@ limpiarBtn.addEventListener('click', () => {
 // Cambiar a la siguiente letra o número
 siguienteBtn.addEventListener('click', () => {
   indice = (indice + 1) % elementos.length;
-  letraONumero.textContent = elementos[indice];
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  mensaje.textContent = '';
+  actualizarElemento();
 });
 
-// Validar el dibujo (ejemplo básico)
-function validarDibujo() {
-  // Aquí podrías agregar lógica para validar el dibujo
-  mensaje.textContent = '¡Bien hecho!';
+// Actualizar el elemento (letra o número) y su imagen de trazos
+function actualizarElemento() {
+  const elemento = elementos[indice];
+  letraONumero.textContent = elemento;
+  imagenTrazos.src = `assets/${elemento}.png`; // Asegúrate de tener las imágenes en la carpeta assets
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  mensaje.textContent = '';
+  mensajeNombre.textContent = `${nombreSelect.value}, dibuja: ${elemento}`;
 }
 
-// Ejemplo de validación al soltar el mouse
-canvas.addEventListener('mouseup', validarDibujo);
+// Inicializar el juego
+actualizarElemento();

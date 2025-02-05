@@ -10,8 +10,15 @@
   <div class="container">
     <h1>Aprender a Escribir</h1>
     <div id="instrucciones">
+      <label for="nombre">Nombre del niño:</label>
+      <select id="nombre">
+        <option value="Daniel">Daniel</option>
+        <option value="Marina">Marina</option>
+      </select>
+      <p id="mensaje-nombre"></p>
       <p>Dibuja la letra o número que aparece abajo:</p>
       <p id="letra-o-numero">A</p>
+      <img id="imagen-trazos" src="" alt="Trazos de la letra o número" style="width: 200px; height: auto;">
     </div>
     <canvas id="lienzo" width="300" height="300"></canvas>
     <button id="limpiar">Limpiar</button>
